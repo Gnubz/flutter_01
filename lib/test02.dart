@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_01/dataclass/dataclass.dart';
+import 'package:flutter_01/dataclass/classcovid.dart';
 import 'package:flutter_01/test04.dart';
 
 class Test02 extends StatefulWidget {
@@ -11,7 +11,7 @@ class Test02 extends StatefulWidget {
 }
 
 class _Test02State extends State<Test02> {
-  List<Dataclass01> b = [];
+  List<Coviddata> b = [];
   int a = 1;
   List<Widget> widgets = [];
   @override
@@ -26,7 +26,7 @@ class _Test02State extends State<Test02> {
     int index01 = 0;
     for (var sna in response.data) {
       Map<String, dynamic> map = sna;
-      Dataclass01 model = Dataclass01.fromMap(map);
+      Coviddata model = Coviddata.fromMap(map);
 
       setState(() {
         b.add(model);
@@ -36,7 +36,7 @@ class _Test02State extends State<Test02> {
     }
   }
 
-  Widget crtwidget(Dataclass01 h2, int index01) => GestureDetector(
+  Widget crtwidget(Coviddata h2, int index01) => GestureDetector(
         child: Card(
           child: Center(
               child: Column(
@@ -54,7 +54,7 @@ class _Test02State extends State<Test02> {
                 },
                 leading: const Icon(Icons.man_sharp),
                 title: Text(
-                  h2.title.toString(),
+                  h2.txnDate.toString(),
                   style: TextStyle(
                       color:
                           const Color.fromARGB(255, 5, 69, 2).withOpacity(0.9),
@@ -62,7 +62,7 @@ class _Test02State extends State<Test02> {
                 ),
                 tileColor: const Color.fromARGB(175, 187, 236, 179),
                 subtitle: Text(
-                  h2.completed.toString(),
+                  h2.province.toString(),
                   style: TextStyle(
                       color:
                           const Color.fromARGB(140, 207, 6, 6).withOpacity(0.9),
