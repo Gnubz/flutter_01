@@ -21,7 +21,7 @@ class _Test02State extends State<Test02> {
   }
 
   Future<void> readdata() async {
-    String url = 'https://covid19.ddc.moph.go.th/api/Cases/today-cases-all';
+    String url = 'https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces';
     Response response = await Dio().get(url);
     int index01 = 0;
     for (var sna in response.data) {
