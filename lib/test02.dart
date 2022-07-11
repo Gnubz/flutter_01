@@ -54,7 +54,7 @@ class _Test02State extends State<Test02> {
                 },
                 leading: const Icon(Icons.man_sharp),
                 title: Text(
-                  h2.txnDate.toString(),
+                  h2.province.toString(),
                   style: TextStyle(
                       color:
                           const Color.fromARGB(255, 5, 69, 2).withOpacity(0.9),
@@ -62,7 +62,7 @@ class _Test02State extends State<Test02> {
                 ),
                 tileColor: const Color.fromARGB(175, 187, 236, 179),
                 subtitle: Text(
-                  h2.province.toString(),
+                  h2.txnDate.toString(),
                   style: TextStyle(
                       color:
                           const Color.fromARGB(140, 207, 6, 6).withOpacity(0.9),
