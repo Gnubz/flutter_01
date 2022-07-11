@@ -26,13 +26,13 @@ class _Test04State extends State<Test04> {
          child: SingleChildScrollView(
           child: Column(
         children: [
-          Text("จังหวัด :${m2.province}"),
-          Text("วัน-เดือน-ปี :${m2.txnDate}"),
-          Text("เคสใหม่ :${m2.newCase}"),
-          Text("เคสทั้งหมด :${m2.totalCase}"),
-          Text("ตายเพิ่ม :${m2.newDeath}"),
-          Text("ตายทั้งหมด :${m2.totalDeath}"),
-          Text("อัพเดตเมื่อ:${m2.updateDate}")
+          Text("จังหวัด :=> ${m2.province}"),
+          Text("วัน-เดือน-ปี :=> ${m2.txnDate}"),
+          Text("เคสใหม่ :=> ${m2.newCase}"),
+          Text("เคสทั้งหมด :=> ${m2.totalCase}"),
+          Text("ตายเพิ่ม :=> ${m2.newDeath}"),
+          Text("ตายทั้งหมด :=> ${m2.totalDeath}"),
+          Text("อัพเดตเมื่อ:=> ${m2.updateDate}")
         ],
       ))),
     );
