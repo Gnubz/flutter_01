@@ -3,7 +3,7 @@
    <application
         android:label="Data_Covid19"
         android:name="${applicationName}"
-        android:icon="assets/lutuu.PNG">
+        android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
             android:exported="true"
