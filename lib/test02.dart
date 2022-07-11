@@ -26,7 +26,7 @@ class _Test02State extends State<Test02> {
     int index01 = 0;
     for (var sna in response.data) {
       Map<String, dynamic> map = sna;
-      Coviddata model = Coviddata.fromMap(map);
+      Coviddata model = Coviddata.fromJson(map);
 
       setState(() {
         b.add(model);
