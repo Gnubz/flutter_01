@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_01/router.dart';
 
 
-String router = '/qrg';
+String router = '/qrscan';
 Future<void>  main() async{
   runApp(const MyApp());
   
