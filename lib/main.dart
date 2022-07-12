@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_01/router.dart';
 
 
-String router = '/menu';
+String router = '/qrg';
 Future<void>  main() async{
   runApp(const MyApp());
   
