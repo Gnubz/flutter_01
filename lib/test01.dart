@@ -19,7 +19,7 @@ class _Test01State extends State<Test01> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Image(image: AssetImage("assets/kpi.png")),
+              image01(),
               text01(),
               text02(),
               textfield1(),
@@ -77,6 +77,10 @@ class _Test01State extends State<Test01> {
                   fontSize: 30, color: Color.fromARGB(255, 255, 0, 0)),
             );
   }
+  Image image01(){
+    return Image.asset('assets/kpi.png');
+  }
+
 
   zed() {
     if(username == '11111' && password == '11111'){
