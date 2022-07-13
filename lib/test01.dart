@@ -19,6 +19,7 @@ class _Test01State extends State<Test01> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              Image(image: AssetImage("assets/kpi.png")),
               text01(),
               text02(),
               textfield1(),
