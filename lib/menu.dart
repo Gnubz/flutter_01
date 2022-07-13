@@ -40,7 +40,7 @@ class _MenuState extends State<Menu> {
 
   BottomNavigationBarItem bottomNavigationBarItem2() {
     return const BottomNavigationBarItem(
-      icon: Icon(Icons.business),
+      icon: Icon(Icons.youtube_searched_for),
       label: 'Qr gen',
       backgroundColor: Color.fromARGB(255, 240, 236, 236),
     );

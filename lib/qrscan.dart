@@ -52,7 +52,7 @@ class _QrscanState extends State<Qrscan> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           IconButton(
-              icon: (Icon(Icons.camera_alt)),
+              icon: (Icon(Icons.camera_alt_outlined)),
               onPressed: () {
                 controller!.pauseCamera();
               }),

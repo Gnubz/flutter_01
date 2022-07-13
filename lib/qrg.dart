@@ -47,7 +47,7 @@ class _QrState extends State<Qr> {
           ),
           suffix: IconButton(
             color: Theme.of(context).colorScheme.secondary,
-            icon: Icon(Icons.back_hand),
+            icon: Icon(Icons.youtube_searched_for_sharp),
             onPressed: () {
               scan();
             },
