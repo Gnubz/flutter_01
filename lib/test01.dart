@@ -51,18 +51,16 @@ class _Test01State extends State<Test01> {
       
       onChanged: (value) => username = value,
       obscureText: false,
-      decoration: const InputDecoration(
+      decoration:  InputDecoration(
           focusedBorder: OutlineInputBorder(),
           border: OutlineInputBorder(),
           labelText: 'Username',
           hintText: 'GnuB123',
           prefixIcon: Icon(Icons.install_desktop),
-          /*suffixIcon: IconButton(
-            onPressed: () {
-              user;
-            },
+          suffixIcon: IconButton(
+            onPressed: ()=> userController.clear(),
             icon: Icon(Icons.close),
-          )*/),
+          )),
     );
   }
 
