@@ -47,7 +47,7 @@ class _QrState extends State<Qr> {
           ),
           suffix: IconButton(
             color: Theme.of(context).colorScheme.secondary,
-            icon: Icon(Icons.camera_alt),
+            icon: Icon(Icons.back_hand),
             onPressed: () {
               scan();
             },
