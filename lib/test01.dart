@@ -12,6 +12,7 @@ String username = "", password = "";
 
 class _Test01State extends State<Test01> {
   final userController = TextEditingController();
+  final passController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,17 +49,16 @@ class _Test01State extends State<Test01> {
   TextField textfield1() {
     return TextField(
       controller: userController,
-      
       onChanged: (value) => username = value,
       obscureText: false,
-      decoration:  InputDecoration(
+      decoration: InputDecoration(
           focusedBorder: OutlineInputBorder(),
           border: OutlineInputBorder(),
           labelText: 'Username',
           hintText: 'GnuB123',
           prefixIcon: Icon(Icons.install_desktop),
           suffixIcon: IconButton(
-            onPressed: ()=> userController.clear(),
+            onPressed: () => userController.clear(),
             icon: Icon(Icons.close),
           )),
     );
@@ -66,12 +66,16 @@ class _Test01State extends State<Test01> {
 
   TextField textfield2() {
     return TextField(
+      controller: passController,
       onChanged: (value) => password = value,
       obscureText: true,
-      decoration: const InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: 'Password',
-      ),
+      decoration: InputDecoration(
+          focusedBorder: OutlineInputBorder(),
+          border: OutlineInputBorder(),
+          labelText: 'Password',
+          prefixIcon: Icon(Icons.insert_chart),
+          suffixIcon: IconButton(
+              onPressed: () => passController, icon: Icon(Icons.close))),
     );
   }
 
