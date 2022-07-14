@@ -25,8 +25,11 @@ class _QrscanState extends State<Qrscan> {
     super.reassemble();
     if (Platform.isAndroid) {
       await controller!.pauseCamera();
+     
     }
-    controller!.resumeCamera();
+    controller!.resumeCamera(); setState(() {
+        
+      });
   }
 
   @override
