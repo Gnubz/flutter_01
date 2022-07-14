@@ -12,22 +12,24 @@ String username = "", password = "";
 
 class _Test01State extends State<Test01> {
   final userController = TextEditingController();
-  final passController = TextEditingController();
+  bool isPasswordsVisible = false;
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.all(1),
       child: Scaffold(
         body: SafeArea(
             child: Center(
           child: SingleChildScrollView(
             child: Column(
-              children: [
+              children: [ 
                 image01(),
-                text01(),
-                text02(),
+                SizedBox(height: 10,width: 20),
+               /* text01(),
+                text02(),*/
                 textfield1(),
-                SizedBox(height: 10),
+                SizedBox(height: 10,width: 20),
+                
                 textfield2(),
                 button1()
               ],
@@ -52,7 +54,12 @@ class _Test01State extends State<Test01> {
       onChanged: (value) => username = value,
       obscureText: false,
       decoration: InputDecoration(
-          focusedBorder: OutlineInputBorder(),
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.black, width: 0.5),
+              borderRadius: BorderRadius.circular(16)),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: BorderSide(color: Colors.green, width: 0.5),),
           border: OutlineInputBorder(),
           labelText: 'Username',
           hintText: 'GnuB123',
@@ -66,20 +73,30 @@ class _Test01State extends State<Test01> {
 
   TextField textfield2() {
     return TextField(
-      controller: passController,
       onChanged: (value) => password = value,
-      obscureText: true,
+      obscureText: isPasswordsVisible,
       decoration: InputDecoration(
-          focusedBorder: OutlineInputBorder(),
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.black, width: 0.5),
+              borderRadius: BorderRadius.circular(16)),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: BorderSide(color: Colors.green, width: 0.5),),
           border: OutlineInputBorder(),
           labelText: 'Password',
-          prefixIcon: Icon(Icons.insert_chart),
+          //errorText: 'Password is Wrong',
+          //prefixIcon: Icon(Icons.insert_chart),
           suffixIcon: IconButton(
-              onPressed: () => passController, icon: Icon(Icons.close))),
+              icon: isPasswordsVisible
+                  ? Icon(Icons.visibility_off)
+                  : Icon(Icons.visibility),
+              onPressed: () => setState(() {
+                    isPasswordsVisible = !isPasswordsVisible;
+                  }))),
     );
   }
 
-  Text text02() {
+  /*Text text02() {
     return Text(
       password,
       style:
@@ -93,7 +110,7 @@ class _Test01State extends State<Test01> {
       style:
           const TextStyle(fontSize: 30, color: Color.fromARGB(255, 255, 0, 0)),
     );
-  }
+  }*/
 
   Image image01() {
     return Image.asset('assets/kpi.png');
