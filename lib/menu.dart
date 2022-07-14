@@ -59,7 +59,7 @@ class _MenuState extends State<Menu> {
     return const BottomNavigationBarItem(
       icon: Icon(Icons.camera_alt),
       label: 'Qr Scan',
-      backgroundColor: Color.fromARGB(255, 228, 66, 66),
+      backgroundColor: Color.fromARGB(255, 0, 207, 253),
     );
   }
 

@@ -17,19 +17,27 @@ class _Test01State extends State<Test01> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(1),
+       decoration: const BoxDecoration(
+            gradient: RadialGradient(
+                center: Alignment(0, -0.33),
+                radius: 2,
+                colors: <Color>[
+              Color.fromARGB(255, 172, 250, 148),
+              Color.fromARGB(255, 46, 122, 254)
+            ])),
       child: Scaffold(
+        //backgroundColor: Color.fromARGB(255, 184, 241, 235),
         body: SafeArea(
             child: Center(
           child: SingleChildScrollView(
             child: Column(
-              children: [ 
+              children: [
                 image01(),
-                SizedBox(height: 10,width: 20),
-               /* text01(),
+                SizedBox(height: 10, width: 20),
+                /* text01(),
                 text02(),*/
                 textfield1(),
-                SizedBox(height: 10,width: 20),
-                
+                SizedBox(height: 10, width: 20),
                 textfield2(),
                 button1()
               ],
@@ -45,7 +53,7 @@ class _Test01State extends State<Test01> {
         onPressed: () {
           zed();
         },
-        child: const Text('Login'));
+        child: const Text('LOGIN'));
   }
 
   TextField textfield1() {
@@ -55,11 +63,12 @@ class _Test01State extends State<Test01> {
       obscureText: false,
       decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.black, width: 0.5),
+              borderSide: BorderSide(color: Colors.black, width: 2),
               borderRadius: BorderRadius.circular(16)),
           focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
-              borderSide: BorderSide(color: Colors.green, width: 0.5),),
+            borderRadius: BorderRadius.circular(16),
+            borderSide: BorderSide(color: Colors.green, width: 2),
+          ),
           border: OutlineInputBorder(),
           labelText: 'Username',
           hintText: 'GnuB123',
@@ -77,11 +86,12 @@ class _Test01State extends State<Test01> {
       obscureText: isPasswordsVisible,
       decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.black, width: 0.5),
+              borderSide: BorderSide(color: Colors.black, width: 2),
               borderRadius: BorderRadius.circular(16)),
           focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
-              borderSide: BorderSide(color: Colors.green, width: 0.5),),
+            borderRadius: BorderRadius.circular(16),
+            borderSide: BorderSide(color: Colors.green, width: 2),
+          ),
           border: OutlineInputBorder(),
           labelText: 'Password',
           //errorText: 'Password is Wrong',
@@ -113,7 +123,7 @@ class _Test01State extends State<Test01> {
   }*/
 
   Image image01() {
-    return Image.asset('assets/kpi.png');
+    return Image.asset('assets/logo.png');
   }
 
   zed() {
