@@ -20,30 +20,22 @@ class _cameraState extends State<camera> {
       body: Container(
         padding: EdgeInsets.only(top: 16),
         child: SafeArea(
-          child: Center(
-            child: SingleChildScrollView(
-                child: Column(
-              children: [
-                image != null
-                    ? Image.file(
-                        image!,
-                        width: 160,
-                        height: 160,
-                        fit: BoxFit.cover,
-                      )
-                    : const FlutterLogo(
-                        size: 160,
-                      ),
-                const SizedBox(
-                  height: 160,
-                ),
-                but01(),
-              ],
-            )),
-          ),
+            child: Center(
+          child: SingleChildScrollView(
+              child: Column(
+            children: [
+              image != null
+                ? Image.file(image!,
+                width: 250,height: 350,
+                fit: BoxFit.cover,)
+                : const FlutterLogo(
+                  size: 200,
+                ),const SizedBox(height: 200,)
+                ,but01(),
+            ],
+          )),
         ),
-      ),
-    );
+    ),),);
   }
 
   Future cameraPick() async {
