@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_01/imagepic.dart';
+import 'package:flutter_01/camera.dart';
 import 'package:flutter_01/qrg.dart';
 import 'package:flutter_01/qrscan.dart';
 import 'package:flutter_01/test02.dart';
@@ -13,7 +13,7 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
-  List<Widget> listwidget = [const Test02(),  Qr(),  Qrscan() , imagePic()];
+  List<Widget> listwidget = [const Test02(),  Qr(),  Qrscan() , camera()];
 
   int index = 0;
 
