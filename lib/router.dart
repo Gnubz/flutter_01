@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_01/camera.dart';
 import 'package:flutter_01/menu.dart';
 import 'package:flutter_01/qrg.dart';
 import 'package:flutter_01/qrscan.dart';
@@ -14,6 +15,7 @@ final Map<String, WidgetBuilder> router01 = {
   '/Test03': (BuildContext context) => const Test03(),
   '/menu': (BuildContext context) => const Menu(),
   '/qrscan': (BuildContext context) => Qrscan(),
-  '/qrg': (BuildContext context) => Qr()
+  '/qrg': (BuildContext context) => Qr(),
+  '/camera': (BuildContext context) => camera()
   
 };

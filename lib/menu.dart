@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_01/imagepic.dart';
 import 'package:flutter_01/qrg.dart';
 import 'package:flutter_01/qrscan.dart';
 import 'package:flutter_01/test02.dart';
@@ -12,7 +13,7 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
-  List<Widget> listwidget = [const Test02(),  Qr(),  Qrscan()];
+  List<Widget> listwidget = [const Test02(),  Qr(),  Qrscan() , imagePic()];
 
   int index = 0;
 
@@ -54,12 +55,21 @@ class _MenuState extends State<Menu> {
     );
   }
 
+  BottomNavigationBarItem bottomNavigationBarItem4() {
+    return const BottomNavigationBarItem(
+      icon: Icon(Icons.camera_alt),
+      label: 'Qr Scan',
+      backgroundColor: Color.fromARGB(255, 228, 66, 66),
+    );
+  }
+
   BottomNavigationBar bottom01() {
     return BottomNavigationBar(
       items: [
         bottomNavigationBarItem(),
         bottomNavigationBarItem2(),
-        bottomNavigationBarItem3()
+        bottomNavigationBarItem3(),
+        bottomNavigationBarItem4()
       ],
       currentIndex: index,
       selectedItemColor: Colors.amber[500],

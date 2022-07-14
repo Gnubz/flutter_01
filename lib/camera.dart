@@ -4,14 +4,14 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
 
-class imagePic extends StatefulWidget {
-  imagePic({Key? key}) : super(key: key);
+class camera extends StatefulWidget {
+  camera({Key? key}) : super(key: key);
 
   @override
-  State<imagePic> createState() => _imagePicState();
+  State<camera> createState() => _cameraState();
 }
 
-class _imagePicState extends State<imagePic> {
+class _cameraState extends State<camera> {
 
   File? image;
 
