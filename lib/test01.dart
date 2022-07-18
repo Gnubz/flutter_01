@@ -17,14 +17,14 @@ class _Test01State extends State<Test01> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(1),
-       decoration: const BoxDecoration(
-            gradient: RadialGradient(
-                center: Alignment(0, -0.33),
-                radius: 2,
-                colors: <Color>[
-              Color.fromARGB(255, 172, 250, 148),
-              Color.fromARGB(255, 46, 122, 254)
-            ])),
+      decoration: const BoxDecoration(
+          gradient: RadialGradient(
+              center: Alignment(0, -0.33),
+              radius: 2,
+              colors: <Color>[
+            Color.fromARGB(255, 172, 250, 148),
+            Color.fromARGB(255, 46, 122, 254)
+          ])),
       child: Scaffold(
         //backgroundColor: Color.fromARGB(255, 184, 241, 235),
         body: SafeArea(
@@ -49,12 +49,25 @@ class _Test01State extends State<Test01> {
   }
 
   ElevatedButton button1() {
-    return ElevatedButton(
-        onPressed: () {
-          zed();
-        },
-        child: const Text('LOGIN'));
+    return ElevatedButton.icon(
+      onPressed: () {
+        zed();
+      },
+      icon: Icon(
+        Icons.person_add_outlined,
+      ),
+      label: Text('LOGIN'),
+      style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.symmetric(horizontal: 100, vertical: 10)),
+    );
   }
+  //   return ElevatedButton(
+  //       // icon: Icon(Icons.abc,size: 32,),
+  //       onPressed: () {
+  //         zed();111
+  //       },
+  //       child: const Text('LOGIN'));
+  // }
 
   TextField textfield1() {
     return TextField(
@@ -63,16 +76,16 @@ class _Test01State extends State<Test01> {
       obscureText: false,
       decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.black, width: 2),
+              borderSide: BorderSide(color: Colors.black, width: 1),
               borderRadius: BorderRadius.circular(16)),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
-            borderSide: BorderSide(color: Colors.green, width: 2),
+            borderSide: BorderSide(color: Colors.blue, width: 2),
           ),
           border: OutlineInputBorder(),
           labelText: 'Username',
           hintText: 'GnuB123',
-          prefixIcon: Icon(Icons.install_desktop),
+          prefixIcon: Icon(Icons.people),
           suffixIcon: IconButton(
             onPressed: () => userController.clear(),
             icon: Icon(Icons.close),
@@ -86,16 +99,16 @@ class _Test01State extends State<Test01> {
       obscureText: isPasswordsVisible,
       decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.black, width: 2),
+              borderSide: BorderSide(color: Colors.black, width: 1),
               borderRadius: BorderRadius.circular(16)),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
-            borderSide: BorderSide(color: Colors.green, width: 2),
+            borderSide: BorderSide(color: Colors.blue, width: 2),
           ),
           border: OutlineInputBorder(),
           labelText: 'Password',
           //errorText: 'Password is Wrong',
-          //prefixIcon: Icon(Icons.insert_chart),
+          prefixIcon: Icon(Icons.insert_chart),
           suffixIcon: IconButton(
               icon: isPasswordsVisible
                   ? Icon(Icons.visibility_off)
