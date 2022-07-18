@@ -59,7 +59,7 @@ class _Test01State extends State<Test01> {
   TextField textfield1() {
     return TextField(
       controller: userController,
-      onChanged: (value) => username = value,
+      onChanged: (value) => username = value.trim(),
       obscureText: false,
       decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
@@ -82,7 +82,7 @@ class _Test01State extends State<Test01> {
 
   TextField textfield2() {
     return TextField(
-      onChanged: (value) => password = value,
+      onChanged: (value) => password = value.trim(),
       obscureText: isPasswordsVisible,
       decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(

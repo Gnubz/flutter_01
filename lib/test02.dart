@@ -1,3 +1,6 @@
+import 'dart:ffi';
+import 'dart:math';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_01/dataclass/classcovid.dart';
@@ -20,8 +23,47 @@ class _Test02State extends State<Test02> {
     readdata();
   }
 
+  Widget crtwidget(Coviddata h2, int index01) => GestureDetector(
+        child: Card(
+          child: Center(
+              child: Column(
+            children: [
+              ListTile(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Test04(
+                        h2: b[index01],
+                      ),
+                    ),
+                  );
+                },
+                leading: const Icon(Icons.man_sharp),
+                title: Text(
+                  h2.txnDate.toString(),
+                  style: TextStyle(
+                      color:
+                          const Color.fromARGB(255, 5, 69, 2).withOpacity(0.9),
+                      fontSize: 20),
+                ),
+                tileColor: const Color.fromARGB(175, 187, 236, 179),
+                subtitle: Text(
+                  h2.province.toString(),
+                  style: TextStyle(
+                      color:
+                          const Color.fromARGB(140, 207, 6, 6).withOpacity(0.9),
+                      fontSize: 20),
+                ),
+              )
+            ],
+          )),
+        ),
+      );
+
   Future<void> readdata() async {
-    String url = 'https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces';
+    String url =
+        'https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces';
     Response response = await Dio().get(url);
     int index01 = 0;
     for (var sna in response.data) {
@@ -36,63 +78,44 @@ class _Test02State extends State<Test02> {
     }
   }
 
-  Widget crtwidget(Coviddata h2, int index01) => GestureDetector(
-        child: Card(
-          child: Center(
-              child: Column(
-            children: [
-              ListTile(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Test04(
-                        h2:b[index01],
-                      ),
-                    ),
-                  );
-                },
-                leading: const Icon(Icons.man_sharp),
-                title: Text(
-                  h2.province.toString(),
-                  style: TextStyle(
-                      color:
-                          const Color.fromARGB(255, 5, 69, 2).withOpacity(0.9),
-                      fontSize: 20),
-                ),
-                tileColor: const Color.fromARGB(175, 187, 236, 179),
-                subtitle: Text(
-                  h2.txnDate.toString(),
-                  style: TextStyle(
-                      color:
-                          const Color.fromARGB(140, 207, 6, 6).withOpacity(0.9),
-                      fontSize: 20),
-                ),
-              )
-            ],
-          )),
-        ),
-      );
+  // Future<Void> refresh() {
+  //   return Future.delayed(Duration(milliseconds: 400));
+
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-            gradient: RadialGradient(
-                center: Alignment(0, -0.33),
-                radius: 2,
-                colors: <Color>[
-              Color.fromARGB(255, 172, 250, 148),
-              Color.fromARGB(255, 46, 122, 254)
-            ])),
-        child:widgets.isEmpty
-            ? const Center(
-                child: CircularProgressIndicator(),
-              )
-            : ListView(
-                children: widgets,
-              ),
-      ),
+          decoration: const BoxDecoration(
+              gradient: RadialGradient(
+                  center: Alignment(0, -0.33),
+                  radius: 2,
+                  colors: <Color>[
+                Color.fromARGB(255, 172, 250, 148),
+                Color.fromARGB(255, 46, 122, 254)
+              ])),
+          child: widgets.isEmpty
+              ? const Center(
+                  child: CircularProgressIndicator(),
+                )
+              : RefreshIndicator(
+                  child: ListView(
+                    children: widgets,
+                  ),
+                  onRefresh: () async {
+                    return Future<void>.delayed(Duration(seconds: 3));
+                  },
+                  strokeWidth: 2,
+                  // color: Colors.redAccent,
+                  // backgroundColor: Colors.yellow,
+                  displacement: 200,
+                  edgeOffset: 20,
+                )
+          // : ListView(
+          //     children: widgets,
+          //   ),
+          ),
     );
   }
 }
