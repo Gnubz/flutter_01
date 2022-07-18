@@ -39,6 +39,7 @@ class _Test01State extends State<Test01> {
                 textfield1(),
                 SizedBox(height: 10, width: 20),
                 textfield2(),
+                SizedBox(height: 10, width: 20),
                 button1()
               ],
             ),
@@ -54,7 +55,7 @@ class _Test01State extends State<Test01> {
         zed();
       },
       icon: Icon(
-        Icons.person_add_outlined,
+        Icons.login_outlined
       ),
       label: Text('LOGIN'),
       style: ElevatedButton.styleFrom(
@@ -84,7 +85,7 @@ class _Test01State extends State<Test01> {
           ),
           border: OutlineInputBorder(),
           labelText: 'Username',
-          hintText: 'GnuB123',
+          hintText: 'asd8473',
           prefixIcon: Icon(Icons.people),
           suffixIcon: IconButton(
             onPressed: () => userController.clear(),
@@ -108,7 +109,7 @@ class _Test01State extends State<Test01> {
           border: OutlineInputBorder(),
           labelText: 'Password',
           //errorText: 'Password is Wrong',
-          prefixIcon: Icon(Icons.insert_chart),
+          //prefixIcon: Icon(Icons.insert_chart),
           suffixIcon: IconButton(
               icon: isPasswordsVisible
                   ? Icon(Icons.visibility_off)
@@ -140,7 +141,7 @@ class _Test01State extends State<Test01> {
   }
 
   zed() {
-    if (username == '11111' && password == '11111') {
+    if (username == 'asd8473' && password == '11111') {
       Navigator.push(
           context, MaterialPageRoute(builder: ((context) => const Menu())));
     }
