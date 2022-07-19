@@ -61,19 +61,21 @@ class _Test02State extends State<Test02> {
 
   Future<void> readdata() async {
     String url =
-        'https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces';
-    Response response = await Dio().get(url);
+        'http://192.168.1.236/webapi_jwt/api/token';
+    Response response = await Dio().get(url+"/get?zclient=910&username=SUMPHAN&password=51522515");
     int index01 = 0;
-    for (var sna in response.data) {
-      Map<String, dynamic> map = sna;
-      Coviddata model = Coviddata.fromJson(map);
+    print(response);
+    // for (var sna in response.data) {
+    //   print(sna);
+    //   Map<String, dynamic> map = sna;
+    //   Coviddata model = Coviddata.fromJson(map);
 
-      setState(() {
-        b.add(model);
-        widgets.add(crtwidget(model, index01));
-      });
-      index01++;
-    }
+    //   setState(() {
+    //     b.add(model);
+    //     widgets.add(crtwidget(model, index01));
+    //   });
+    //   index01++;
+    // }
   }
 
   // Future<Void> refresh() {

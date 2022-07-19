@@ -1,5 +1,11 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_01/menu.dart';
+// import 'package:dio/dio.dart';
+// import 'package:flutter/cupertino.dart';
+
+// import 'package:flutter_01/menu.dart';
+
+import 'package:http/http.dart' as http;
 
 class Test01 extends StatefulWidget {
   const Test01({Key? key}) : super(key: key);
@@ -8,7 +14,8 @@ class Test01 extends StatefulWidget {
   State<Test01> createState() => _Test01State();
 }
 
-String username = "", password = "";
+String 
+ username= "", password = "";
 
 class _Test01State extends State<Test01> {
   final userController = TextEditingController();
@@ -17,6 +24,7 @@ class _Test01State extends State<Test01> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(1),
+
       decoration: const BoxDecoration(
           gradient: RadialGradient(
               center: Alignment(0, -0.33),
@@ -52,7 +60,7 @@ class _Test01State extends State<Test01> {
   ElevatedButton button1() {
     return ElevatedButton.icon(
       onPressed: () {
-        zed();
+        readdata();
       },
       icon: Icon(Icons.login_outlined),
       label: Text('LOGIN'),
@@ -106,7 +114,7 @@ class _Test01State extends State<Test01> {
           ),
           border: OutlineInputBorder(),
           labelText: 'Password',
-          errorText: 'Password is Wrong',
+          // errorText: 'Password is Wrong',
           //prefixIcon: Icon(Icons.account_tree),
           suffixIcon: IconButton(
               icon: isPasswordsVisible
@@ -138,12 +146,21 @@ class _Test01State extends State<Test01> {
     return Image.asset('assets/logo.png');
   }
 
-  zed() {
-    if (username == 'asd8473' && password == '11111') {
-      Navigator.push(
-          context, MaterialPageRoute(builder: ((context) => const Menu())));
-    }
-
-    setState(() {});
+   readdata() async {
+    String url = 'http://192.168.1.236/webapi_jwt/api/token/get?zclient=910&username=SUMPHAN&password=51522515';
+    final response1 = await http.get(Uri.parse(url));
+    final response = await http.get(
+  Uri.parse('http://192.168.1.236/webapi_jwt/api/Zmmim03/Pallet_Chk?zclient=510&palletno=Y220000003&zoption=S'),
+  headers:{
+     HttpHeaders.authorizationHeader: response1.body,
+  }
+  );
+  print(response1.body.toString());
+  print(response.body.toString());
+       
+  
+setState(() {
+  
+});
   }
 }
