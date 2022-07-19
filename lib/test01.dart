@@ -54,9 +54,7 @@ class _Test01State extends State<Test01> {
       onPressed: () {
         zed();
       },
-      icon: Icon(
-        Icons.login_outlined
-      ),
+      icon: Icon(Icons.login_outlined),
       label: Text('LOGIN'),
       style: ElevatedButton.styleFrom(
           padding: EdgeInsets.symmetric(horizontal: 100, vertical: 10)),
@@ -108,8 +106,8 @@ class _Test01State extends State<Test01> {
           ),
           border: OutlineInputBorder(),
           labelText: 'Password',
-          //errorText: 'Password is Wrong',
-          //prefixIcon: Icon(Icons.insert_chart),
+          errorText: 'Password is Wrong',
+          //prefixIcon: Icon(Icons.account_tree),
           suffixIcon: IconButton(
               icon: isPasswordsVisible
                   ? Icon(Icons.visibility_off)

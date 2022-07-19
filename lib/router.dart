@@ -17,5 +17,4 @@ final Map<String, WidgetBuilder> router01 = {
   '/qrscan': (BuildContext context) => Qrscan(),
   '/qrg': (BuildContext context) => Qr(),
   '/camera': (BuildContext context) => camera()
-  
 };

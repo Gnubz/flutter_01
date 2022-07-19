@@ -13,9 +13,6 @@ class Dataclass01 {
     required this.title,
     required this.completed,
   });
-    
-
-
 
   Dataclass01 copyWith({
     int? userId,
@@ -51,7 +48,8 @@ class Dataclass01 {
 
   String toJson() => json.encode(toMap());
 
-  factory Dataclass01.fromJson(String source) => Dataclass01.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Dataclass01.fromJson(String source) =>
+      Dataclass01.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
@@ -61,19 +59,16 @@ class Dataclass01 {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is Dataclass01 &&
-      other.userId == userId &&
-      other.id == id &&
-      other.title == title &&
-      other.completed == completed;
+        other.userId == userId &&
+        other.id == id &&
+        other.title == title &&
+        other.completed == completed;
   }
 
   @override
   int get hashCode {
-    return userId.hashCode ^
-      id.hashCode ^
-      title.hashCode ^
-      completed.hashCode;
+    return userId.hashCode ^ id.hashCode ^ title.hashCode ^ completed.hashCode;
   }
 }
