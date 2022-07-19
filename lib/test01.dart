@@ -149,18 +149,15 @@ class _Test01State extends State<Test01> {
    readdata() async {
     String url = 'http://192.168.1.236/webapi_jwt/api/token/get?zclient=910&username=SUMPHAN&password=51522515';
     final response1 = await http.get(Uri.parse(url));
+    var  splitted = response1.body.toString().split(" \" ");
     final response = await http.get(
   Uri.parse('http://192.168.1.236/webapi_jwt/api/Zmmim03/Pallet_Chk?zclient=510&palletno=Y220000003&zoption=S'),
   headers:{
-     HttpHeaders.authorizationHeader: response1.body,
+     HttpHeaders.authorizationHeader: splitted.toString(),
   }
   );
-  print(response1.body.toString());
+  print(splitted.toString());
   print(response.body.toString());
-       
-  
-setState(() {
-  
-});
+
   }
 }
